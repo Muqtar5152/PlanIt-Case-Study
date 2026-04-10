@@ -3,7 +3,8 @@ import { defineConfig } from 'vite'
 import { fileURLToPath } from 'node:url'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/PlanIt-Case-Study/' : '/',
   logLevel: 'error', // Suppress warnings, only show errors
   plugins: [react()],
   resolve: {
@@ -11,4 +12,4 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   }
-});
+}));
