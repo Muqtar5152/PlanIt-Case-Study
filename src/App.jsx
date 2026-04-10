@@ -5,7 +5,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import Home from './pages/Home';
 
-const routerBase = (import.meta.env.BASE_URL || '/').replace(/\/$/, '') || '/';
+const REPO_BASE = '/PlanIt-Case-Study/';
+const getBasePath = () => (window.location.pathname.startsWith(REPO_BASE) ? REPO_BASE : '/');
+const routerBase = getBasePath().replace(/\/$/, '') || '/';
 
 function App() {
 

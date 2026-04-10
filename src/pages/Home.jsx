@@ -12,7 +12,9 @@ import OutcomesReflection from '../components/portfolio/OutcomesReflection';
 import Footer from '../components/portfolio/Footer';
 import FinalScreensSection from '../components/portfolio/FinalScreensSection';
 
-const HERO_IMAGE = `${import.meta.env.BASE_URL}images/hero.png`;
+const REPO_BASE = '/PlanIt-Case-Study/';
+const BASE_PATH = window.location.pathname.startsWith(REPO_BASE) ? REPO_BASE : '/';
+const HERO_IMAGE = `${BASE_PATH}images/hero.png`;
 
 export default function Home() {
   return (
