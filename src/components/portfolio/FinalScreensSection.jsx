@@ -1,22 +1,24 @@
 import ScrollReveal from './ScrollReveal';
 import SectionHeader from './SectionHeader';
 
+const imagePath = (fileName) => `${import.meta.env.BASE_URL}images/${fileName}`;
+
 const SCREENS = [
-  { label: 'Sign Up', screen: '01', url: '/images/screen-01-sign-up.png' },
-  { label: 'Login', screen: '02', url: '/images/screen-02-login.png' },
-  { label: 'Login — Active', screen: '03', url: '/images/screen-03-login-active.png' },
-  { label: 'Home Dashboard', screen: '04', url: '/images/screen-04-home-dashboard.png' },
-  { label: 'Add Task', screen: '05', url: '/images/screen-05-add-task.png' },
-  { label: 'AI Mode — Empty', screen: '06', url: '/images/screen-06-ai-empty.png' },
-  { label: 'AI Mode — Filled', screen: '07', url: '/images/screen-07-ai-filled.png' },
-  { label: 'AI Mode — Add Task', screen: '08', url: '/images/screen-08-ai-add-task.png' },
-  { label: 'Added to Schedule', screen: '09', url: '/images/screen-09-added-to-schedule.png' },
-  { label: 'Calendar', screen: '10', url: '/images/screen-10-calendar.png' },
-  { label: 'Calendar — Tasks Added', screen: '11', url: '/images/screen-11-calendar-tasks-added.png' },
-  { label: 'Calendar — Inline Add', screen: '12', url: '/images/screen-12-calendar-inline-add.png' },
-  { label: 'Progress', screen: '13', url: '/images/screen-13-progress.png' },
-  { label: 'Pomodoro Timer', screen: '14', url: '/images/screen-14-pomodoro.png' },
-  { label: 'Profile', screen: '15', url: '/images/screen-15-profile.png' },
+  { label: 'Sign Up', screen: '01', url: imagePath('screen-01-sign-up.png') },
+  { label: 'Login', screen: '02', url: imagePath('screen-02-login.png') },
+  { label: 'Login — Active', screen: '03', url: imagePath('screen-03-login-active.png') },
+  { label: 'Home Dashboard', screen: '04', url: imagePath('screen-04-home-dashboard.png') },
+  { label: 'Add Task', screen: '05', url: imagePath('screen-05-add-task.png') },
+  { label: 'AI Mode — Empty', screen: '06', url: imagePath('screen-06-ai-empty.png') },
+  { label: 'AI Mode — Filled', screen: '07', url: imagePath('screen-07-ai-filled.png') },
+  { label: 'AI Mode — Add Task', screen: '08', url: imagePath('screen-08-ai-add-task.png') },
+  { label: 'Added to Schedule', screen: '09', url: imagePath('screen-09-added-to-schedule.png') },
+  { label: 'Calendar', screen: '10', url: imagePath('screen-10-calendar.png') },
+  { label: 'Calendar — Tasks Added', screen: '11', url: imagePath('screen-11-calendar-tasks-added.png') },
+  { label: 'Calendar — Inline Add', screen: '12', url: imagePath('screen-12-calendar-inline-add.png') },
+  { label: 'Progress', screen: '13', url: imagePath('screen-13-progress.png') },
+  { label: 'Pomodoro Timer', screen: '14', url: imagePath('screen-14-pomodoro.png') },
+  { label: 'Profile', screen: '15', url: imagePath('screen-15-profile.png') },
 ];
 
 export default function FinalScreensSection() {
@@ -54,7 +56,7 @@ export default function FinalScreensSection() {
       <ScrollReveal delay={0.15}>
         <div className="mb-16 rounded-2xl overflow-hidden bg-surface border border-black/[0.06]">
           <img
-            src="/images/final-preview.png"
+            src={imagePath('final-preview.png')}
             alt="PlanIt — Final UI Preview"
             className="w-full h-auto object-cover"
           />

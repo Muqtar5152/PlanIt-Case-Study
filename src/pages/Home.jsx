@@ -12,7 +12,7 @@ import OutcomesReflection from '../components/portfolio/OutcomesReflection';
 import Footer from '../components/portfolio/Footer';
 import FinalScreensSection from '../components/portfolio/FinalScreensSection';
 
-const HERO_IMAGE = '/images/hero.png';
+const HERO_IMAGE = `${import.meta.env.BASE_URL}images/hero.png`;
 
 export default function Home() {
   return (
