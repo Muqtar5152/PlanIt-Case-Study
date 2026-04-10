@@ -3,6 +3,7 @@ import SectionHeader from './SectionHeader';
 
 const REPO_BASE = '/PlanIt-Case-Study/';
 const BASE_PATH = window.location.pathname.startsWith(REPO_BASE) ? REPO_BASE : '/';
+/** @param {string} fileName */
 const imagePath = (fileName) => `${BASE_PATH}images/${fileName}`;
 
 const SCREENS = [
