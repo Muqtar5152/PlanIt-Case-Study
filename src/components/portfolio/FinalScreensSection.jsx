@@ -1,49 +1,22 @@
 import ScrollReveal from './ScrollReveal';
 import SectionHeader from './SectionHeader';
 
-const createScreenArt = (label, screen, accent = '#d9ff6f') => 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960">
-    <defs>
-      <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-        <stop offset="0%" stop-color="#f8fafc" />
-        <stop offset="100%" stop-color="#e2e8f0" />
-      </linearGradient>
-    </defs>
-    <rect width="720" height="960" rx="56" fill="url(#bg)" />
-    <rect x="54" y="54" width="612" height="64" rx="20" fill="#0f172a" opacity="0.92" />
-    <circle cx="96" cy="86" r="16" fill="${accent}" />
-    <rect x="140" y="74" width="180" height="24" rx="12" fill="#ffffff" opacity="0.9" />
-    <rect x="54" y="156" width="612" height="248" rx="36" fill="#ffffff" />
-    <rect x="86" y="188" width="280" height="22" rx="11" fill="#0f172a" opacity="0.8" />
-    <rect x="86" y="232" width="420" height="18" rx="9" fill="#64748b" opacity="0.7" />
-    <rect x="86" y="274" width="360" height="18" rx="9" fill="#64748b" opacity="0.5" />
-    <rect x="86" y="320" width="180" height="58" rx="29" fill="${accent}" />
-    <rect x="54" y="448" width="612" height="180" rx="36" fill="#0f172a" opacity="0.92" />
-    <rect x="86" y="488" width="210" height="20" rx="10" fill="#ffffff" opacity="0.9" />
-    <rect x="86" y="530" width="520" height="16" rx="8" fill="#ffffff" opacity="0.7" />
-    <rect x="86" y="566" width="420" height="16" rx="8" fill="#ffffff" opacity="0.5" />
-    <rect x="54" y="664" width="612" height="242" rx="36" fill="#ffffff" />
-    <text x="86" y="758" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#0f172a" opacity="0.16">${screen}</text>
-    <text x="86" y="816" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#0f172a">${label}</text>
-  </svg>
-`);
-
 const SCREENS = [
-  { label: 'Sign Up', screen: '01', url: createScreenArt('Sign Up', '01') },
-  { label: 'Login', screen: '02', url: createScreenArt('Login', '02') },
-  { label: 'Login — Active', screen: '03', url: createScreenArt('Login — Active', '03') },
-  { label: 'Home Dashboard', screen: '04', url: createScreenArt('Home Dashboard', '04') },
-  { label: 'Add Task', screen: '05', url: createScreenArt('Add Task', '05') },
-  { label: 'AI Mode — Empty', screen: '06', url: createScreenArt('AI Mode — Empty', '06') },
-  { label: 'AI Mode — Filled', screen: '07', url: createScreenArt('AI Mode — Filled', '07') },
-  { label: 'AI Mode — Add Task', screen: '08', url: createScreenArt('AI Mode — Add Task', '08') },
-  { label: 'Added to Schedule', screen: '09', url: createScreenArt('Added to Schedule', '09') },
-  { label: 'Calendar', screen: '10', url: createScreenArt('Calendar', '10') },
-  { label: 'Calendar — Tasks Added', screen: '11', url: createScreenArt('Calendar — Tasks Added', '11') },
-  { label: 'Calendar — Inline Add', screen: '12', url: createScreenArt('Calendar — Inline Add', '12') },
-  { label: 'Progress', screen: '13', url: createScreenArt('Progress', '13') },
-  { label: 'Pomodoro Timer', screen: '14', url: createScreenArt('Pomodoro Timer', '14') },
-  { label: 'Profile', screen: '15', url: createScreenArt('Profile', '15') },
+  { label: 'Sign Up', screen: '01', url: '/images/screen-01-sign-up.png' },
+  { label: 'Login', screen: '02', url: '/images/screen-02-login.png' },
+  { label: 'Login — Active', screen: '03', url: '/images/screen-03-login-active.png' },
+  { label: 'Home Dashboard', screen: '04', url: '/images/screen-04-home-dashboard.png' },
+  { label: 'Add Task', screen: '05', url: '/images/screen-05-add-task.png' },
+  { label: 'AI Mode — Empty', screen: '06', url: '/images/screen-06-ai-empty.png' },
+  { label: 'AI Mode — Filled', screen: '07', url: '/images/screen-07-ai-filled.png' },
+  { label: 'AI Mode — Add Task', screen: '08', url: '/images/screen-08-ai-add-task.png' },
+  { label: 'Added to Schedule', screen: '09', url: '/images/screen-09-added-to-schedule.png' },
+  { label: 'Calendar', screen: '10', url: '/images/screen-10-calendar.png' },
+  { label: 'Calendar — Tasks Added', screen: '11', url: '/images/screen-11-calendar-tasks-added.png' },
+  { label: 'Calendar — Inline Add', screen: '12', url: '/images/screen-12-calendar-inline-add.png' },
+  { label: 'Progress', screen: '13', url: '/images/screen-13-progress.png' },
+  { label: 'Pomodoro Timer', screen: '14', url: '/images/screen-14-pomodoro.png' },
+  { label: 'Profile', screen: '15', url: '/images/screen-15-profile.png' },
 ];
 
 export default function FinalScreensSection() {
@@ -81,7 +54,7 @@ export default function FinalScreensSection() {
       <ScrollReveal delay={0.15}>
         <div className="mb-16 rounded-2xl overflow-hidden bg-surface border border-black/[0.06]">
           <img
-            src={createScreenArt('Final UI Preview', 'PlanIt')}
+            src="/images/final-preview.png"
             alt="PlanIt — Final UI Preview"
             className="w-full h-auto object-cover"
           />
