@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { motion, useMotionValueEvent, useScroll, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform, useMotionValueEvent } from 'framer-motion';
 import ScrollReveal from './ScrollReveal';
 
 const TAGS = ['UX Research', 'Product Design', 'AI Integration', 'Mobile App', '4 Weeks'];
@@ -23,18 +23,45 @@ const preloadFrames = frames => {
 export default function HeroSection() {
   const sectionRef = useRef(null);
   const [frameIndex, setFrameIndex] = useState(0);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end end'],
+  const scrollProgress = useMotionValue(0);
+  const smoothProgress = useSpring(scrollProgress, {
+    stiffness: 120,
+    damping: 26,
+    mass: 0.45,
   });
-  const scale = useTransform(scrollYProgress, [0, 1], [1.06, 0.92]);
-  const y = useTransform(scrollYProgress, [0, 1], [28, -28]);
+  const scale = useTransform(smoothProgress, [0, 1], [1.06, 0.92]);
+  const y = useTransform(smoothProgress, [0, 1], [28, -28]);
 
   useEffect(() => {
     preloadFrames(FRAME_SOURCES);
   }, []);
 
-  useMotionValueEvent(scrollYProgress, 'change', latest => {
+  useEffect(() => {
+    const updateProgress = () => {
+      const section = sectionRef.current;
+
+      if (!section) {
+        return;
+      }
+
+      const rect = section.getBoundingClientRect();
+      const scrollableDistance = Math.max(rect.height - window.innerHeight, 1);
+      const rawProgress = Math.min(Math.max(-rect.top / scrollableDistance, 0), 1);
+
+      scrollProgress.set(rawProgress);
+    };
+
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+
+    return () => {
+      window.removeEventListener('scroll', updateProgress);
+      window.removeEventListener('resize', updateProgress);
+    };
+  }, [scrollProgress]);
+
+  useMotionValueEvent(scrollProgress, 'change', latest => {
     if (!FRAME_SOURCES.length) {
       return;
     }
@@ -102,12 +129,6 @@ export default function HeroSection() {
               </div>
             </ScrollReveal>
 
-            <ScrollReveal delay={0.4}>
-              <div className="inline-flex items-center gap-3 rounded-full border border-forest/10 bg-white/55 px-4 py-3 text-[11px] uppercase tracking-[0.16em] text-forest/80 shadow-[0_18px_40px_rgba(14,28,20,0.08)] backdrop-blur-md">
-                <span className="h-2 w-2 rounded-full bg-lime shadow-[0_0_0_6px_rgba(182,255,61,0.18)]" />
-                Scroll to scrub through the frame sequence
-              </div>
-            </ScrollReveal>
           </div>
         </div>
       </div>
