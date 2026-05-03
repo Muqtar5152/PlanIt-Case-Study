@@ -40,7 +40,7 @@ export default function HeroSection({ heroImage }) {
       </ScrollReveal>
 
       <ScrollReveal delay={0.4}>
-        <div className="w-full max-w-5xl rounded-2xl overflow-hidden">
+        <div className="w-full lg:w-[80%] lg:max-w-[51.2rem] mx-auto rounded-2xl overflow-hidden">
           <img
             src={heroImage}
             alt="PlanIt dashboard preview with overlapping phone mockups on a black background"
