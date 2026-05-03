@@ -20,7 +20,16 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-surface">
       <StickyNav />
-      <HeroSection heroImage={HERO_IMAGE} />
+      <HeroSection />
+      <section className="-mt-24 px-6 pb-2 md:px-10 lg:px-20">
+        <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-3xl border border-forest/10 bg-white shadow-[0_24px_80px_rgba(19,34,25,0.14)]">
+          <img
+            src={HERO_IMAGE}
+            alt="PlanIt app mockup with two mobile screens"
+            className="h-auto w-full object-cover"
+          />
+        </div>
+      </section>
       <ProjectSnapshot />
       <ProblemSection />
       <ResearchInsights />
