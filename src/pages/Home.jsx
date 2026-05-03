@@ -14,7 +14,7 @@ import FinalScreensSection from '../components/portfolio/FinalScreensSection';
 
 const REPO_BASE = '/PlanIt-Case-Study/';
 const BASE_PATH = window.location.pathname.startsWith(REPO_BASE) ? REPO_BASE : '/';
-const HERO_IMAGE = `${BASE_PATH}images/hero.png`;
+const HERO_IMAGE = `${BASE_PATH}images/final-preview.png`;
 
 export default function Home() {
   return (

@@ -2,6 +2,9 @@ import ScrollReveal from './ScrollReveal';
 
 const TAGS = ['UX Research', 'Product Design', 'AI Integration', 'Mobile App', '4 Weeks'];
 
+/**
+ * @param {{ heroImage: string }} props
+ */
 export default function HeroSection({ heroImage }) {
   return (
     <section id="hero" className="min-h-screen flex flex-col justify-center px-6 md:px-10 lg:px-20 pt-20 pb-16">
@@ -40,7 +43,7 @@ export default function HeroSection({ heroImage }) {
         <div className="w-full max-w-5xl rounded-2xl overflow-hidden">
           <img
             src={heroImage}
-            alt="PlanIt hero - abstract 3D composition of organized glass blocks and glowing green spheres"
+            alt="PlanIt dashboard preview with overlapping phone mockups on a black background"
             className="w-full h-auto object-cover"
           />
         </div>
